@@ -1,0 +1,16 @@
+.dialogItem {
+
+}
+
+.dialogItem a {
+    text-decoration: none;
+}
+
+a.activeLink {
+    color: darkred;
+}
+
+.dialogItem img {
+    width: 50px;
+    border-radius: 25px;
+}
