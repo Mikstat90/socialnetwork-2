@@ -5,6 +5,7 @@ import {PostDataType} from "../../../redux/State";
 
 type MyPostsType = {
     postData: PostDataType[]
+    addPost: (postMessage) => void
 }
 
 export const MyPosts = (props: MyPostsType) => {
@@ -13,7 +14,7 @@ export const MyPosts = (props: MyPostsType) => {
 
     let addPost = () => {
         let text = newPostElement.current.value
-        alert(text)
+        props.addPost(text)
     }
 
     return (
