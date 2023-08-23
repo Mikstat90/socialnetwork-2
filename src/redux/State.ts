@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () => {
+    alert('stay changed')
+}
 
 export type MessagesDataType = {
     id: number
@@ -57,7 +59,7 @@ export let state: StateType = {
     }
 }
 
-export let addPost = () => {
+export const addPost = () => {
 
     let newPost = {
         id: 5,
@@ -68,17 +70,17 @@ export let addPost = () => {
     state.profilePage.postData.push(newPost)
     state.profilePage.newPostText = ''
 
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
 
     state.profilePage.newPostText = newText
 
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 
-export let addMessage = () => {
+export const addMessage = () => {
 
     let newMessage = {
         id: 4,
@@ -88,12 +90,16 @@ export let addMessage = () => {
     state.dialogsPage.messagesData.push(newMessage)
     state.dialogsPage.newMessagesText = ''
 
-    rerenderEntireTree(state)
+    rerenderEntireTree()
 }
 
-export let updateNewMessageText = (newMessage) => {
+export const updateNewMessageText = (newMessage) => {
 
     state.dialogsPage.newMessagesText = newMessage
 
-    rerenderEntireTree(state)
+    rerenderEntireTree()
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
 }
